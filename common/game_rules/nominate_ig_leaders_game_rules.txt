@@ -1,0 +1,6 @@
+nominate_ig_leaders_groups = {
+	default = nil_non_marginal_ig
+	nil_all_ig = {}
+	nil_non_marginal_ig = {}
+	nil_government_ig = {}
+}

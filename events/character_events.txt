@@ -1,0 +1,65 @@
+﻿namespace = character_events
+
+character_events.100 = {
+	type = country_event
+	hidden = yes
+	immediate = {
+		random_interest_group = {
+			limit = {
+				NOT = { has_variable = memento_mori }
+				NOT = {
+					any_scope_character = {
+						is_ruler = yes
+					}
+				}
+			}
+			save_scope_as = memento_mori_ig
+			leader = {
+				save_scope_as = memento_mori_leader
+			}
+			set_variable = {
+				name = memento_mori
+				years = 5
+			}
+		}
+		post_notification = ig_leader_memento_mori
+		
+		scope:memento_mori_leader = {
+			if = {
+				limit = {
+					owner = {
+						is_player = yes
+					}
+				}
+				if = {
+					limit = {
+						has_game_rule = nil_all_ig
+					}
+					trigger_event = nominate_ig_leaders.2
+				}
+				else_if = {
+					limit = {
+						has_game_rule = nil_government_ig
+						interest_group = {
+							is_in_government = yes
+						}
+					}
+					trigger_event = nominate_ig_leaders.2
+				}
+				else_if = {
+					limit = {
+						has_game_rule = nil_non_marginal_ig
+						interest_group = {
+							is_marginal = no
+						}
+					}
+					trigger_event = nominate_ig_leaders.2
+				}
+			}
+			
+			kill_character = {
+				hidden = yes
+			}
+		}
+	}
+}

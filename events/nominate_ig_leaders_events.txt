@@ -1,0 +1,247 @@
+﻿namespace = nominate_ig_leaders
+
+nominate_ig_leaders.1 = {	# The leader has passed away
+	type = character_event
+
+	placement = ROOT
+	title = nominate_ig_leaders_events.1.t
+	desc = nominate_ig_leaders_events.1.d
+	flavor = nominate_ig_leaders_events.1.f
+
+	duration = 1
+
+	gui_window = event_window_1char_tabloid
+	left_icon = THIS
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/misc/1Character_Banner"
+
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	immediate = {
+		save_scope_as = dead_ig_leader
+		interest_group = {
+			save_scope_as = nominating_ig
+		}
+
+		owner = {
+			# First character
+			create_character = {
+				ig_leader = no
+				interest_group = scope:nominating_ig
+				save_scope_as = candidate_1
+
+				on_created = {
+					set_variable = candidate_1_in_void
+					place_character_in_void = 2
+				}
+			}
+
+			# Second character
+			create_character = {
+				ig_leader = no
+				interest_group = scope:nominating_ig
+				save_scope_as = candidate_2
+
+				on_created = {
+					set_variable = candidate_2_in_void
+					place_character_in_void = 2
+				}
+			}
+
+			# Third character
+			create_character = {
+				ig_leader = no
+				interest_group = scope:nominating_ig
+				save_scope_as = candidate_3
+
+				on_created = {
+					set_variable = candidate_3_in_void
+					place_character_in_void = 2
+				}
+			}
+		}
+	}
+
+	option = { # Status quo, Paradox's randomly generated leader
+		name = nominate_ig_leaders_events.1.c0
+		# highlighted_option = yes
+		default_option = yes
+
+		# Nothing happens
+		custom_tooltip = {
+			text = nominate_ig_leaders_events.1.tooltip
+		}
+	}
+
+	option = {# [Test] A random character
+		name = nominate_ig_leaders_events.1.c1
+
+		random_character_in_void = {
+			limit = {
+				has_variable = candidate_1_in_void
+			}
+			save_scope_as = candidate_1_prototype
+		}
+
+		scope:candidate_1_prototype = {
+			set_as_interest_group_leader = yes
+			free_character_from_void = yes
+		}
+	}
+
+	option = {# [Test] A random character
+		name = nominate_ig_leaders_events.1.c2
+
+		random_character_in_void = {
+			limit = {
+				has_variable = candidate_2_in_void
+			}
+			save_scope_as = candidate_2_prototype
+		}
+
+		scope:candidate_2_prototype = {
+			set_as_interest_group_leader = yes
+			free_character_from_void = yes
+		}
+	}
+
+	option = {# [Test] A random character
+		name = nominate_ig_leaders_events.1.c3
+
+		random_character_in_void = {
+			limit = {
+				has_variable = candidate_3_in_void
+			}
+			save_scope_as = candidate_3_prototype
+		}
+
+		scope:candidate_3_prototype = {
+			set_as_interest_group_leader = yes
+			free_character_from_void = yes
+		}
+	}
+}
+
+nominate_ig_leaders.2 = {	# The leader leaves office
+	type = character_event
+
+	placement = ROOT
+	title = nominate_ig_leaders_events.2.t
+	desc = nominate_ig_leaders_events.2.d
+	flavor = nominate_ig_leaders_events.2.f
+
+	duration = 1
+
+	gui_window = event_window_1char_tabloid
+	left_icon = THIS
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/misc/1Character_Banner"
+
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	immediate = {
+		save_scope_as = retired_ig_leader
+		interest_group = {
+			save_scope_as = nominating_ig
+		}
+
+		owner = {
+			# First character
+			create_character = {
+				ig_leader = no
+				interest_group = scope:nominating_ig
+				save_scope_as = retired_candidate_1
+
+				on_created = {
+					set_variable = retired_candidate_1_in_void
+					place_character_in_void = 2
+				}
+			}
+
+			# Second character
+			create_character = {
+				ig_leader = no
+				interest_group = scope:nominating_ig
+				save_scope_as = retired_candidate_2
+
+				on_created = {
+					set_variable = retired_candidate_2_in_void
+					place_character_in_void = 2
+				}
+			}
+
+			# Third character
+			create_character = {
+				ig_leader = no
+				interest_group = scope:nominating_ig
+				save_scope_as = retired_candidate_3
+
+				on_created = {
+					set_variable = retired_candidate_3_in_void
+					place_character_in_void = 2
+				}
+			}
+		}
+	}
+
+	option = { # Status quo, Paradox's randomly generated leader
+		name = nominate_ig_leaders_events.2.c0
+		# highlighted_option = yes
+		default_option = yes
+
+		# Nothing happens
+		custom_tooltip = {
+			text = nominate_ig_leaders_events.2.tooltip
+		}
+	}
+
+	option = {# [Test] A random character
+		name = nominate_ig_leaders_events.2.c1
+
+		random_character_in_void = {
+			limit = {
+				has_variable = retired_candidate_1_in_void
+			}
+			save_scope_as = retired_candidate_1_prototype
+		}
+
+		scope:candidate_1_prototype = {
+			set_as_interest_group_leader = yes
+			free_character_from_void = yes
+		}
+	}
+
+	option = {# [Test] A random character
+		name = nominate_ig_leaders_events.2.c2
+
+		random_character_in_void = {
+			limit = {
+				has_variable = retired_candidate_2_in_void
+			}
+			save_scope_as = retired_candidate_2_prototype
+		}
+
+		scope:candidate_2_prototype = {
+			set_as_interest_group_leader = yes
+			free_character_from_void = yes
+		}
+	}
+
+	option = {# [Test] A random character
+		name = nominate_ig_leaders_events.2.c3
+
+		random_character_in_void = {
+			limit = {
+				has_variable = retired_candidate_3_in_void
+			}
+			save_scope_as = retired_candidate_3_prototype
+		}
+
+		scope:candidate_3_prototype = {
+			set_as_interest_group_leader = yes
+			free_character_from_void = yes
+		}
+	}
+}

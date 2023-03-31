@@ -1,0 +1,53 @@
+﻿on_character_death = {
+	effect = {
+		save_scope_as = dead_character
+
+		# NPL - If an IG leader dies, pops in-IG nomination
+		if = {
+			limit = {
+				owner = {
+					is_player = yes	# This event is triggered only for players
+				}
+				
+				has_role = politician
+				interest_group = {
+					leader = scope:dead_character
+				}
+			}
+			
+			# Applied to All IG
+			if = {
+				limit = {
+					has_game_rule = nil_all_ig
+				}
+				THIS = {
+					trigger_event = nominate_ig_leaders.1
+				}
+			} 
+			# Applied to non marginal IG
+			else_if = {
+				limit = {
+					has_game_rule = nil_non_marginal_ig
+					interest_group = {
+						is_marginal = no
+					}
+				}
+				THIS = {
+					trigger_event = nominate_ig_leaders.1
+				}
+			}
+			# Applied to in-government IG 
+			else_if = {
+				limit = {
+					has_game_rule = nil_government_ig
+					interest_group = {
+						is_in_government = yes
+					}
+				}
+				THIS = {
+					trigger_event = nominate_ig_leaders.1
+				}
+			}
+		}
+	}
+}

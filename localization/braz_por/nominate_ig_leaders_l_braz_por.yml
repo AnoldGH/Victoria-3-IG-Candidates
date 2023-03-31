@@ -1,0 +1,22 @@
+﻿l_braz_por:
+nominate_ig_leaders_events.1.t:0 "[SCOPE.sCharacter('dead_ig_leader').GetFullName], the leader of [SCOPE.gsInterestGroup('nominating_ig').GetName] has died."
+nominate_ig_leaders_events.1.d:0 "The various factions within the [SCOPE.gsInterestGroup('nominating_ig').GetName] are in heated debate over the passing of [SCOPE.sCharacter('dead_ig_leader').GetFullName]. Among the candidates, who will inherit the mantle of leadership?"
+nominate_ig_leaders_events.1.f:0 "\"Departing from us, [SCOPE.sCharacter('dead_ig_leader').GetFirstName] enjoined us to hold high and guard the purity of the great title of member of the party. We vow to you, [SCOPE.sCharacter('dead_ig_leader').GetFirstName], we shall fulfill your behest with honour!\""
+nominate_ig_leaders_events.1.c0:0 "Let the internal votes decide."
+nominate_ig_leaders_events.2.t:0 "[SCOPE.sCharacter('dead_ig_leader').GetFullName], the leader of [SCOPE.gsInterestGroup('nominating_ig').GetName] has retired."
+nominate_ig_leaders_events.2.d:0 "The political career of [SCOPE.sCharacter('retired_ig_leader').GetFullName] in the [SCOPE.gsInterestGroup('nominating_ig').GetName] has ended. Among the candidates, who will inherit the mantle of leadership?"
+nominate_ig_leaders_events.2.f:0 "\"Departing from us, [SCOPE.sCharacter('dead_ig_leader').GetFirstName] enjoined us to hold high and guard the purity of the great title of member of the party. We vow to you, [SCOPE.sCharacter('dead_ig_leader').GetFirstName], we shall fulfill your behest with honour!\""
+nominate_ig_leaders_events.2.c0:0 "Nominate the most popular candidate."
+nominate_ig_leaders_events.1.c1:0 "[SCOPE.sCharacter('candidate_1').GetFullName], the [SCOPE.sCharacter('candidate_1').GetCulture.GetName] [SCOPE.sCharacter('candidate_1').GetIdeology.GetName]."
+nominate_ig_leaders_events.1.c2:0 "[SCOPE.sCharacter('candidate_2').GetFullName], the [SCOPE.sCharacter('candidate_2').GetCulture.GetName] [SCOPE.sCharacter('candidate_2').GetIdeology.GetName]."
+nominate_ig_leaders_events.1.c3:0 "[SCOPE.sCharacter('candidate_3').GetFullName], the [SCOPE.sCharacter('candidate_3').GetCulture.GetName] [SCOPE.sCharacter('candidate_3').GetIdeology.GetName]."
+nominate_ig_leaders_events.1.tooltip:0 "The result shall be upheld."
+
+
+rule_nominate_ig_leaders_groups:0 "Nominate IG Leaders"
+setting_nil_all_ig:0 "All IG"
+setting_nil_government_ig:0 "In-government IG"
+setting_nil_non_marginal_ig:0 "Non-marginal IG"
+setting_nil_non_marginal_ig_desc:0 "Nominate leader for all non-marginal [Concept('concept_interest_group', '$concept_interest_group$')]"
+setting_nil_government_ig_desc:0 "Nominate leader for all in-government [Concept('concept_interest_group', '$concept_interest_group$')]"
+setting_nil_all_ig_desc:0 "Nominate leader for all [Concept('concept_interest_group', '$concept_interest_group$')]"
